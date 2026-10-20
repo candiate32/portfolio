@@ -140,24 +140,6 @@ export const titles: Record<string, Title> = {
     icon: 'graduation',
     palette: ['#0c4a6e', '#0284c7', '#7dd3fc'],
   },
-  outreach: {
-    id: 'outreach',
-    title: 'Cold Open',
-    kind: 'Docuseries',
-    tagline: 'Finding the right people, then giving them a reason to reply.',
-    badge: 'Experience',
-    genres: ['Sales', 'Prospecting', 'CRM'],
-    stack: ['HubSpot CRM', 'Cold outreach', 'Lead management'],
-    synopsis:
-      'Prospecting and cold-outreach work from Mourya\'s independent growth initiatives: who to contact, how to position the offer, and how every lead gets tracked in a CRM.',
-    episodes: [
-      { title: 'The List', body: 'Worked on prospecting strategies to find and qualify the right businesses to approach.' },
-      { title: 'The Pitch', body: 'Shaped service positioning and cold-outreach messaging for digital growth offerings.' },
-      { title: 'The Pipeline', body: 'Built CRM-based lead-management workflows so no conversation slips through the cracks.' },
-    ],
-    icon: 'phone',
-    palette: ['#1e293b', '#0f766e', '#5eead4'],
-  },
   campaigns: {
     id: 'campaigns',
     title: 'By the Numbers',
@@ -184,10 +166,11 @@ export const titles: Record<string, Title> = {
     tagline: 'Websites for businesses that need to be found, trusted and contacted.',
     badge: 'Experience',
     genres: ['Web Development', 'Freelance'],
-    stack: ['React', 'Next.js', 'JavaScript', 'SEO'],
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'SEO'],
     synopsis:
-      'Website development offered as part of Mourya\'s independent digital services, including the Gastronomix website delivered alongside its inventory system.',
+      'Website development offered as part of Mourya\'s independent digital services, including the Gastronomix website delivered alongside its inventory system, and the very site you\'re browsing right now.',
     episodes: [
+      { title: 'You Are Here', body: 'This portfolio: a Netflix-style site designed and built with React, TypeScript, Tailwind CSS and Framer Motion, deployed on GitHub Pages. Pick a different profile and the whole page reshuffles.' },
       { title: 'The Gastronomix Site', body: 'Developed the Gastronomix website, giving the business a dedicated web presence next to its operations system.' },
       { title: 'Built to Be Found', body: 'Web builds paired with SEO and inbound marketing so the site brings in leads, not just visitors.' },
     ],
@@ -273,7 +256,7 @@ export type RowSpec =
   | { kind: 'interests'; label: string }
 
 const allProjects = ['gastronomix', 'cachet', 'voice', 'engos']
-const experience = ['bmsit', 'ailab', 'cloudlab', 'growth', 'outreach', 'campaigns', 'webstudio']
+const experience = ['bmsit', 'ailab', 'cloudlab', 'growth', 'campaigns', 'webstudio']
 
 export const viewers: Viewer[] = [
   {
@@ -301,7 +284,7 @@ export const viewers: Viewer[] = [
     id: 'founder', label: 'Founder', color: '#16a34a', hero: 'growth',
     rows: [
       { kind: 'titles', label: 'Builds That Save Money', ids: ['cachet', 'voice', 'gastronomix', 'engos'] },
-      { kind: 'titles', label: 'Growth & Automation', ids: ['growth', 'outreach', 'campaigns', 'webstudio', 'voice'] },
+      { kind: 'titles', label: 'Growth & Automation', ids: ['growth', 'campaigns', 'webstudio', 'voice'] },
       { kind: 'top10', label: 'Top 10 Tools in the Kit' },
       { kind: 'titles', label: 'Education & Experience', ids: experience },
       { kind: 'interests', label: 'What Mourya Wants to Build Next' },

@@ -52,7 +52,7 @@ function TitleCard({ t, onOpen, first }: { t: Title; onOpen: (t: Title) => void;
       onClick={() => onOpen(t)}
       className={`group relative aspect-video ${first ? 'origin-left' : ''} w-[72vw] shrink-0 snap-start rounded-md text-left outline-none transition duration-300 hover:z-20 focus-visible:z-20 sm:w-[300px] sm:hover:scale-[1.18] sm:focus-visible:scale-[1.18]`}
     >
-      <div className="h-full overflow-hidden rounded-md ring-white/0 transition group-hover:shadow-2xl group-hover:shadow-black group-focus-visible:ring-2 group-focus-visible:ring-white">
+      <div className="isolate h-full transform-gpu overflow-hidden rounded-md ring-white/0 transition group-hover:shadow-2xl group-hover:shadow-black group-focus-visible:ring-2 group-focus-visible:ring-white">
         <Poster title={t.title} kicker={t.kind} icon={t.icon} palette={t.palette} />
       </div>
       {/* hover panel: slides up over the artwork (a drawer below the card would be clipped by the rail) */}
@@ -104,15 +104,15 @@ export function Top10Row({ label, onOpen, id }: { label: string; onOpen: (t: Tit
           className="group relative flex h-56 shrink-0 snap-start items-end outline-none sm:h-64"
         >
           <span
-            className="font-display text-[12rem] leading-[0.78] text-flix-dark sm:text-[15rem]"
-            style={{ WebkitTextStroke: '4px #595959' }}
+            className="font-display text-[12rem] leading-[0.78] text-flix-dark transition-[-webkit-text-stroke-color] duration-300 [-webkit-text-stroke:4px_#595959] group-hover:[-webkit-text-stroke-color:#a3a3a3] sm:text-[15rem]"
             aria-hidden
           >
             {i + 1}
           </span>
-          <span className="-ml-6 h-full w-36 overflow-hidden rounded-md shadow-xl transition duration-300 group-hover:-translate-y-2 group-hover:scale-105 group-focus-visible:ring-2 group-focus-visible:ring-white sm:-ml-8 sm:w-44">
+          {/* Own compositing layer (transform-gpu + isolate) so the clipped artwork moves with the card instead of lagging behind it. */}
+          <div className="relative isolate -ml-6 h-full w-36 transform-gpu overflow-hidden rounded-md shadow-xl transition-transform duration-300 ease-out will-change-transform group-hover:-translate-y-2 group-hover:scale-105 group-focus-visible:ring-2 group-focus-visible:ring-white sm:-ml-8 sm:w-44">
             <Poster title={s.name} kicker={s.group} icon={s.icon} palette={s.palette} />
-          </span>
+          </div>
         </button>
       ))}
     </Rail>

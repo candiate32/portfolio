@@ -46,7 +46,7 @@ export function Poster({ title, kicker, icon, palette: [a, b, c], big }: Props) 
       <div className="grain absolute inset-0 opacity-30 mix-blend-overlay" />
       <Icon
         name={icon}
-        className={`absolute text-white/15 ${big ? '-right-10 -top-6 h-80 w-80' : '-right-4 -top-3 h-28 w-28 sm:h-32 sm:w-32'}`}
+        className={`absolute text-white/15 transition-transform duration-500 ease-out group-hover:-rotate-6 group-hover:scale-110 ${big ? '-right-10 -top-6 h-80 w-80' : '-right-4 -top-3 h-28 w-28 sm:h-32 sm:w-32'}`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
       <OriginalBadge className={`absolute left-2 top-1.5 ${big ? 'text-4xl' : 'text-2xl'}`} />
