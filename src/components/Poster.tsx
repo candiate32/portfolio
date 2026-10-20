@@ -1,5 +1,5 @@
 import {
-  Brain, Cloud, Code2, Cpu, Database, GraduationCap, Megaphone, Phone, Server, Sparkles, Warehouse, Workflow,
+  Brain, Cloud, Code2, Cpu, Database, GraduationCap, Megaphone, Phone, Server, Sparkles, Target, Warehouse, Workflow,
   type LucideIcon,
 } from 'lucide-react'
 import type { IconName } from '../data'
@@ -7,7 +7,7 @@ import type { IconName } from '../data'
 const icons: Record<IconName, LucideIcon> = {
   warehouse: Warehouse, database: Database, phone: Phone, cpu: Cpu, megaphone: Megaphone,
   graduation: GraduationCap, code: Code2, brain: Brain, cloud: Cloud, workflow: Workflow,
-  server: Server, sparkles: Sparkles,
+  server: Server, sparkles: Sparkles, target: Target,
 }
 
 export function Icon({ name, className }: { name: IconName; className?: string }) {

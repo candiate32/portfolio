@@ -2,7 +2,7 @@
 
 export type IconName =
   | 'warehouse' | 'database' | 'phone' | 'cpu' | 'megaphone' | 'graduation'
-  | 'code' | 'brain' | 'cloud' | 'workflow' | 'server' | 'sparkles'
+  | 'code' | 'brain' | 'cloud' | 'workflow' | 'server' | 'sparkles' | 'target'
 
 export type Title = {
   id: string
@@ -45,12 +45,34 @@ export const titles: Record<string, Title> = {
     synopsis:
       'An end-to-end inventory-tracking system built for a real client, connecting supplier deliveries, warehouse stock and cloud-kitchen inventory in one operational workflow, shipped together with the business\'s website.',
     episodes: [
-      { title: 'The Supply Line', body: 'Connected supplier deliveries, warehouse stock and cloud-kitchen inventory into a single operational workflow.' },
+      { title: 'The Supply Line', body: 'Connected supplier deliveries, warehouse stock and cloud-kitchen inventory into a single operational workflow, so stock is tracked from the moment it arrives.' },
       { title: 'Follow the Stock', body: 'Structured the flow around stock movement and visibility across stages, so teams can trace supplies from receipt through warehouse handling to kitchen usage.' },
+      { title: 'No More Guesswork', body: 'Gave the kitchen side a clear picture of what is on hand and what is on the way, replacing scattered updates with one shared view of inventory.' },
+      { title: 'Built for the Floor', body: 'Designed the system around how warehouse and kitchen staff actually work: simple steps, clear states, and nothing that slows down a busy service.' },
       { title: 'Front of House', body: 'Developed the Gastronomix website alongside the operational system, giving the business a dedicated web presence.' },
     ],
     icon: 'warehouse',
     palette: ['#7c2d12', '#ea580c', '#fbbf24'],
+  },
+  mediastic: {
+    id: 'mediastic',
+    title: 'Mediastic',
+    kind: 'Limited Series',
+    tagline: 'Every click tracked, every lead sorted, every rupee of ad spend made to work harder.',
+    badge: 'Client Work',
+    genres: ['Performance Marketing', 'Automation', 'CRM'],
+    stack: ['Meta Pixel', 'Meta Ads', 'n8n', 'CRM', 'A/B testing'],
+    synopsis:
+      'Growth and automation work for Mediastic: installing the Meta Pixel so ad performance could finally be measured, then building n8n automation flows that categorise and route leads, set up a proper TOFU / MOFU / BOFU funnel, and cut ad spend.',
+    episodes: [
+      { title: 'Pixel Perfect', body: 'Added the Meta Pixel to the website so every visit, sign-up and conversion feeds back into Meta Ads, giving campaigns real data to optimise against.' },
+      { title: 'Sort the Leads', body: 'Built automation flows in n8n that categorise incoming leads and route each type down its own path instead of treating every lead the same.' },
+      { title: 'Top, Middle, Bottom', body: 'Set up a proper TOFU / MOFU / BOFU structure: awareness for cold audiences, nurturing for the interested, and conversion pushes for people ready to buy.' },
+      { title: 'Test Everything', body: 'Ran A/B tests on campaigns and flows to find what actually converts, rather than guessing.' },
+      { title: 'Spend Less, Get More', body: 'By automating lead handling and targeting each funnel stage properly, reduced ad spend while keeping leads flowing into the CRM.' },
+    ],
+    icon: 'target',
+    palette: ['#450a0a', '#be123c', '#f472b6'],
   },
   cachet: {
     id: 'cachet',
@@ -63,8 +85,11 @@ export const titles: Record<string, Title> = {
     synopsis:
       'AI query retrieval with intelligent caching: match semantically similar questions and reuse a suitable answer instead of relying only on exact-string matches, cutting repeated inference, latency and API cost.',
     episodes: [
-      { title: 'Same Question, Different Words', body: 'Developed a product concept for semantic matching of similar queries and reusing suitable responses rather than relying only on exact-string matches.' },
-      { title: 'Cache-Aware Routing', body: 'Explored routing that reduces repeated inference, response latency and API costs while weighing relevance and freshness.' },
+      { title: 'Same Question, Different Words', body: 'Semantic matching of similar queries, so "how do I reset my password?" and "forgot my password, help" can share one good answer instead of two paid LLM calls.' },
+      { title: 'Embeddings Everywhere', body: 'Every incoming question is turned into an embedding and compared against past ones stored in PostgreSQL/Supabase, with a similarity threshold deciding what counts as a match.' },
+      { title: 'Cache-Aware Routing', body: 'Routing that reduces repeated inference, response latency and API costs while weighing relevance and freshness: hits come from the cache, misses go to the model.' },
+      { title: 'When Not to Cache', body: 'Freshness and relevance rules so time-sensitive or personal questions skip the cache instead of getting a stale answer.' },
+      { title: 'The API', body: 'A FastAPI service that sits in front of any LLM provider, so an app can add semantic caching without changing how it calls the model.' },
     ],
     icon: 'database',
     palette: ['#1e1b4b', '#4f46e5', '#22d3ee'],
@@ -81,7 +106,9 @@ export const titles: Record<string, Title> = {
       'AI voice calling and lead qualification: a client workflow that takes a lead from intake to an outbound call, qualifies them in conversation, captures structured data and hands off to the CRM.',
     episodes: [
       { title: 'Ring Ring', body: 'Mapped a workflow connecting lead intake, outbound calls, conversational qualification, structured data capture and CRM handoff.' },
-      { title: 'Wiring the Voice', body: 'Explored integrations among telephony, LLM-driven dialogue, voice generation and workflow automation.' },
+      { title: 'Wiring the Voice', body: 'Integrated telephony (Exotel, SIP) with LLM-driven dialogue and voice generation, so the call sounds like a conversation, not a phone tree.' },
+      { title: 'The Qualifier', body: 'A conversation script that asks the questions a sales team cares about and turns free-form answers into structured fields.' },
+      { title: 'Straight to HubSpot', body: 'Every call ends with a clean CRM record: who was called, what they said, and whether they are worth a human follow-up.' },
     ],
     icon: 'phone',
     palette: ['#064e3b', '#059669', '#a3e635'],
@@ -97,10 +124,11 @@ export const titles: Record<string, Title> = {
     synopsis:
       'An AI-native engineering OS: persistent project context, reusable engineering rules, graph-based code knowledge and multi-agent task orchestration for AI-assisted development.',
     episodes: [
-      { title: 'Remember Everything', body: 'Persistent project context so an assistant does not start every session cold.' },
-      { title: 'House Rules', body: 'Reusable engineering rules that carry a team\'s conventions across tasks.' },
-      { title: 'The Code Graph', body: 'Graph-based knowledge of the codebase for retrieval that understands structure, not just text.' },
-      { title: 'Assemble the Team', body: 'Multi-agent task orchestration: specialised agents working one problem in parallel.' },
+      { title: 'Remember Everything', body: 'Persistent project context, so an AI assistant picks up where it left off instead of starting every session cold.' },
+      { title: 'House Rules', body: "Reusable engineering rules that carry a team's conventions, review standards and gotchas across every task." },
+      { title: 'The Code Graph', body: 'Graph-based knowledge of the codebase for retrieval that understands structure (who calls what, what depends on what), not just text.' },
+      { title: 'Assemble the Team', body: 'Multi-agent task orchestration: a planner, builders and a strict reviewer working one problem in parallel.' },
+      { title: 'Dogfooding', body: "In daily use for Mourya's own development work, which is where most of its rules came from." },
     ],
     icon: 'cpu',
     palette: ['#3b0764', '#a21caf', '#f472b6'],
@@ -255,14 +283,14 @@ export type RowSpec =
   | { kind: 'top10'; label: string }
   | { kind: 'interests'; label: string }
 
-const allProjects = ['gastronomix', 'cachet', 'voice', 'engos']
+const allProjects = ['mediastic', 'gastronomix', 'cachet', 'voice', 'engos']
 const experience = ['bmsit', 'ailab', 'cloudlab', 'growth', 'campaigns', 'webstudio']
 
 export const viewers: Viewer[] = [
   {
     id: 'recruiter', label: 'Recruiter', color: '#E50914', hero: 'gastronomix',
     rows: [
-      { kind: 'titles', label: 'Top Picks for Recruiter', ids: ['gastronomix', 'cachet', 'voice', 'engos', 'bmsit', 'ailab', 'webstudio', 'growth', 'cloudlab', 'campaigns'] },
+      { kind: 'titles', label: 'Top Picks for Recruiter', ids: ['mediastic', 'gastronomix', 'cachet', 'voice', 'engos', 'bmsit', 'ailab', 'webstudio', 'growth', 'cloudlab', 'campaigns'] },
       { kind: 'top10', label: 'Top 10 Skills in Mourya\'s Stack Today' },
       { kind: 'titles', label: 'Selected Projects', ids: allProjects },
       { kind: 'titles', label: 'Education & Experience', ids: experience },
@@ -274,7 +302,7 @@ export const viewers: Viewer[] = [
     rows: [
       { kind: 'titles', label: 'Trending in AI Infra', ids: ['cachet', 'engos', 'voice'] },
       { kind: 'top10', label: 'Top 10 in the Stack Today' },
-      { kind: 'titles', label: 'Shipped for Real Clients', ids: ['gastronomix', 'voice'] },
+      { kind: 'titles', label: 'Shipped for Real Clients', ids: ['mediastic', 'gastronomix', 'voice'] },
       { kind: 'titles', label: 'All Projects', ids: allProjects },
       { kind: 'titles', label: 'Education & Experience', ids: experience },
       { kind: 'interests', label: 'Currently Obsessed With' },
@@ -283,8 +311,8 @@ export const viewers: Viewer[] = [
   {
     id: 'founder', label: 'Founder', color: '#16a34a', hero: 'growth',
     rows: [
-      { kind: 'titles', label: 'Builds That Save Money', ids: ['cachet', 'voice', 'gastronomix', 'engos'] },
-      { kind: 'titles', label: 'Growth & Automation', ids: ['growth', 'campaigns', 'webstudio', 'voice'] },
+      { kind: 'titles', label: 'Builds That Save Money', ids: ['mediastic', 'cachet', 'voice', 'gastronomix', 'engos'] },
+      { kind: 'titles', label: 'Growth & Automation', ids: ['mediastic', 'growth', 'campaigns', 'webstudio', 'voice'] },
       { kind: 'top10', label: 'Top 10 Tools in the Kit' },
       { kind: 'titles', label: 'Education & Experience', ids: experience },
       { kind: 'interests', label: 'What Mourya Wants to Build Next' },
@@ -293,7 +321,7 @@ export const viewers: Viewer[] = [
   {
     id: 'curious', label: 'Just Browsing', color: '#eab308', hero: 'engos',
     rows: [
-      { kind: 'titles', label: 'New Releases', ids: ['engos', 'cachet', 'voice'] },
+      { kind: 'titles', label: 'New Releases', ids: ['mediastic', 'engos', 'cachet', 'voice'] },
       { kind: 'titles', label: 'Based on a True Story', ids: experience },
       { kind: 'top10', label: 'Top 10 Skills Today' },
       { kind: 'interests', label: 'Genres Mourya Loves' },
