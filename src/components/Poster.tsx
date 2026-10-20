@@ -36,7 +36,7 @@ type Props = {
 export function Poster({ title, kicker, icon, palette: [a, b, c], big }: Props) {
   return (
     <div
-      className="relative h-full w-full overflow-hidden"
+      className="relative h-full w-full overflow-hidden [container-type:inline-size]"
       style={{
         background: `radial-gradient(120% 90% at 85% 15%, ${c}cc 0%, transparent 55%),
                      radial-gradient(90% 80% at 0% 100%, ${a} 0%, transparent 70%),
@@ -54,7 +54,7 @@ export function Poster({ title, kicker, icon, palette: [a, b, c], big }: Props) 
         {kicker && (
           <p className="mb-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">{kicker}</p>
         )}
-        <h3 className={`font-display leading-[0.9] tracking-wide text-white drop-shadow-lg ${big ? 'text-6xl' : 'text-3xl'}`}>
+        <h3 className={`font-display leading-[0.9] tracking-wide text-white drop-shadow-lg ${big ? 'text-6xl' : 'text-[min(1.875rem,17cqw)]'}`}>
           {title}
         </h3>
       </div>
