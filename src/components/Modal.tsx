@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ExternalLink, Mail, X } from 'lucide-react'
+import { CalendarDays, ExternalLink, Play, X } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { profile, type Title } from '../data'
 import { Poster } from './Poster'
@@ -19,7 +19,7 @@ export function Modal({ title, onClose }: { title: Title; onClose: () => void })
     }
   }, [onClose])
 
-  const cta = title.link ?? { label: 'Ask Mourya about it', href: `mailto:${profile.email}?subject=${encodeURIComponent(title.title)}` }
+  const cta = title.link ?? { label: 'Ask Mourya about it', href: profile.booking }
 
   return (
     <motion.div
@@ -62,7 +62,7 @@ export function Modal({ title, onClose }: { title: Title; onClose: () => void })
               rel="noreferrer"
               className="mt-4 inline-flex items-center gap-2 rounded bg-white px-5 py-2 font-bold text-black transition hover:bg-white/75"
             >
-              {title.link ? <ExternalLink className="h-5 w-5" /> : <Mail className="h-5 w-5" />} {cta.label}
+              {title.link ? <ExternalLink className="h-5 w-5" /> : <CalendarDays className="h-5 w-5" />} {cta.label}
             </a>
           </div>
         </div>
@@ -101,19 +101,31 @@ export function Modal({ title, onClose }: { title: Title; onClose: () => void })
             </div>
             <ol>
               {title.episodes.map((ep, i) => (
-                <li
+                <motion.li
                   key={ep.title}
-                  className={`flex items-center gap-4 rounded-md border-b border-neutral-800 p-4 sm:gap-6 sm:p-6 ${i === 0 ? 'bg-neutral-800' : ''}`}
+                  initial={{ opacity: 0, x: -12 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.15 + i * 0.06 }}
+                  className="group relative flex cursor-default items-center gap-4 overflow-hidden rounded-md border-b border-neutral-800 p-4 transition-colors duration-300 hover:bg-neutral-800 sm:gap-6 sm:p-6"
                 >
-                  <span className="w-6 shrink-0 text-center text-2xl text-neutral-400">{i + 1}</span>
-                  <div className="hidden aspect-video w-32 shrink-0 overflow-hidden rounded sm:block">
-                    <Poster title="" icon={title.icon} palette={title.palette} />
+                  {/* red edge that grows in on hover */}
+                  <span className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-flix-red transition-transform duration-300 group-hover:scale-y-100" />
+                  <span className="w-6 shrink-0 text-center text-2xl text-neutral-400 transition-all duration-300 group-hover:scale-125 group-hover:text-white">{i + 1}</span>
+                  <div className="relative hidden aspect-video w-32 shrink-0 overflow-hidden rounded sm:block">
+                    <div className="h-full w-full transition-transform duration-500 group-hover:scale-110">
+                      <Poster title="" icon={title.icon} palette={title.palette} />
+                    </div>
+                    <span className="absolute inset-0 grid place-items-center bg-black/40 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <span className="grid h-9 w-9 place-items-center rounded-full border-2 border-white bg-black/50 transition-transform duration-300 group-hover:scale-110">
+                        <Play className="h-4 w-4 fill-white text-white" />
+                      </span>
+                    </span>
                   </div>
-                  <div>
+                  <div className="transition-transform duration-300 group-hover:translate-x-1">
                     <p className="font-semibold text-white">{ep.title}</p>
-                    <p className="mt-1 text-sm text-neutral-400">{ep.body}</p>
+                    <p className="mt-1 text-sm text-neutral-400 transition-colors duration-300 group-hover:text-neutral-200">{ep.body}</p>
                   </div>
-                </li>
+                </motion.li>
               ))}
             </ol>
           </div>

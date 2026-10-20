@@ -28,6 +28,7 @@ export const profile = {
   email: 'mouryaroopesh@gmail.com',
   phone: '+91 96634 05584',
   github: 'https://github.com/candiate32',
+  booking: 'https://cal.com/mourya-reddy-jlchbi/book-a-meeting-with-me',
   summary:
     'Artificial Intelligence and Machine Learning undergraduate with an interdisciplinary focus on applied AI, full-stack product development, workflow automation, and digital growth. I like turning technical ideas into practical products through structured problem-solving, rapid prototyping, and product-oriented thinking.',
 }
@@ -54,9 +55,9 @@ export const titles: Record<string, Title> = {
   cachet: {
     id: 'cachet',
     title: 'Cachet',
-    kind: 'Original Concept',
+    kind: 'Original Series',
     tagline: 'Why pay an LLM twice for the same question?',
-    badge: 'Product Concept',
+    badge: 'College Project',
     genres: ['Applied AI', 'LLM Infra', 'Cost Engineering'],
     stack: ['Python', 'FastAPI', 'Embeddings', 'PostgreSQL / Supabase', 'LLM APIs'],
     synopsis:
@@ -67,18 +68,17 @@ export const titles: Record<string, Title> = {
     ],
     icon: 'database',
     palette: ['#1e1b4b', '#4f46e5', '#22d3ee'],
-    link: { label: 'View on GitHub', href: 'https://github.com/candiate32/cachet' },
   },
   voice: {
     id: 'voice',
     title: 'Dial-Up',
-    kind: 'Automation Concept',
+    kind: 'Limited Series',
     tagline: 'An AI that calls the lead, qualifies them, and fills in the CRM.',
-    badge: 'Automation Concept',
+    badge: 'Client Project',
     genres: ['Conversational AI', 'Telephony', 'CRM'],
     stack: ['Exotel', 'SIP', 'Voice APIs', 'Conversational AI', 'HubSpot CRM'],
     synopsis:
-      'AI voice calling and lead qualification: a proposed workflow that takes a lead from intake to an outbound call, qualifies them in conversation, captures structured data and hands off to the CRM.',
+      'AI voice calling and lead qualification: a client workflow that takes a lead from intake to an outbound call, qualifies them in conversation, captures structured data and hands off to the CRM.',
     episodes: [
       { title: 'Ring Ring', body: 'Mapped a workflow connecting lead intake, outbound calls, conversational qualification, structured data capture and CRM handoff.' },
       { title: 'Wiring the Voice', body: 'Explored integrations among telephony, LLM-driven dialogue, voice generation and workflow automation.' },
@@ -89,9 +89,9 @@ export const titles: Record<string, Title> = {
   engos: {
     id: 'engos',
     title: 'Engineering OS',
-    kind: 'Developer Tooling Concept',
+    kind: 'Developer Tooling',
     tagline: 'Give your AI pair-programmer a memory, a rulebook and a team.',
-    badge: 'Concept',
+    badge: 'In Use for Development',
     genres: ['AI Agents', 'Dev Tools', 'Knowledge Graphs'],
     stack: ['Multi-agent orchestration', 'Code graphs', 'LLMs'],
     synopsis:
@@ -140,6 +140,97 @@ export const titles: Record<string, Title> = {
     icon: 'graduation',
     palette: ['#0c4a6e', '#0284c7', '#7dd3fc'],
   },
+  outreach: {
+    id: 'outreach',
+    title: 'Cold Open',
+    kind: 'Docuseries',
+    tagline: 'Finding the right people, then giving them a reason to reply.',
+    badge: 'Experience',
+    genres: ['Sales', 'Prospecting', 'CRM'],
+    stack: ['HubSpot CRM', 'Cold outreach', 'Lead management'],
+    synopsis:
+      'Prospecting and cold-outreach work from Mourya\'s independent growth initiatives: who to contact, how to position the offer, and how every lead gets tracked in a CRM.',
+    episodes: [
+      { title: 'The List', body: 'Worked on prospecting strategies to find and qualify the right businesses to approach.' },
+      { title: 'The Pitch', body: 'Shaped service positioning and cold-outreach messaging for digital growth offerings.' },
+      { title: 'The Pipeline', body: 'Built CRM-based lead-management workflows so no conversation slips through the cracks.' },
+    ],
+    icon: 'phone',
+    palette: ['#1e293b', '#0f766e', '#5eead4'],
+  },
+  campaigns: {
+    id: 'campaigns',
+    title: 'By the Numbers',
+    kind: 'True Crime: Ad Spend',
+    tagline: 'CTR, CPA, conversion rate, ROAS. If it can\'t be measured, it can\'t be improved.',
+    badge: 'Experience',
+    genres: ['Performance Marketing', 'Analytics'],
+    stack: ['Meta Ads', 'SEO', 'Social media', 'Inbound marketing'],
+    synopsis:
+      'A metrics-first approach to campaign concepts across Meta Ads, SEO, social media and inbound marketing, judged on click-through rate, cost per acquisition, conversion rate and return on ad spend.',
+    episodes: [
+      { title: 'Click-Through Rate', body: 'Is the ad earning attention? Campaign concepts start with what makes people click.' },
+      { title: 'Cost per Acquisition', body: 'What does a customer actually cost? Spend is weighed against the leads it brings in.' },
+      { title: 'Conversion Rate', body: 'From visitor to lead: tuning the path from landing page to enquiry.' },
+      { title: 'Return on Ad Spend', body: 'The finale: every campaign concept answers whether the money came back.' },
+    ],
+    icon: 'megaphone',
+    palette: ['#422006', '#ca8a04', '#fde047'],
+  },
+  webstudio: {
+    id: 'webstudio',
+    title: 'Web Studio',
+    kind: 'Series',
+    tagline: 'Websites for businesses that need to be found, trusted and contacted.',
+    badge: 'Experience',
+    genres: ['Web Development', 'Freelance'],
+    stack: ['React', 'Next.js', 'JavaScript', 'SEO'],
+    synopsis:
+      'Website development offered as part of Mourya\'s independent digital services, including the Gastronomix website delivered alongside its inventory system.',
+    episodes: [
+      { title: 'The Gastronomix Site', body: 'Developed the Gastronomix website, giving the business a dedicated web presence next to its operations system.' },
+      { title: 'Built to Be Found', body: 'Web builds paired with SEO and inbound marketing so the site brings in leads, not just visitors.' },
+    ],
+    icon: 'sparkles',
+    palette: ['#0f172a', '#4338ca', '#a5b4fc'],
+  },
+  ailab: {
+    id: 'ailab',
+    title: 'Applied AI Lab',
+    kind: 'Anthology',
+    tagline: 'Each episode, a new idea gets prototyped before it gets debated.',
+    badge: 'Self-Directed Learning',
+    genres: ['Applied AI', 'Machine Learning', 'LLMs'],
+    stack: ['Python', 'Embeddings', 'Semantic retrieval', 'Predictive analytics', 'LLM APIs'],
+    synopsis:
+      'Hands-on exploration beyond the classroom: LLM-powered workflows, predictive analytics, embeddings and semantic retrieval, the groundwork behind Cachet, Dial-Up and Engineering OS.',
+    episodes: [
+      { title: 'LLM Workflows', body: 'Exploring how LLM-powered workflows turn into practical products.' },
+      { title: 'Predictive Analytics', body: 'Machine-learning workflows for prediction and analysis.' },
+      { title: 'Embeddings & Retrieval', body: 'Semantic retrieval and embeddings: the foundation of the Cachet concept.' },
+    ],
+    icon: 'brain',
+    palette: ['#2e1065', '#6d28d9', '#c084fc'],
+  },
+  cloudlab: {
+    id: 'cloudlab',
+    title: 'Into the Cloud',
+    kind: 'Learning Series',
+    tagline: 'Linux, containers, clusters and pipelines, learned by breaking things on purpose.',
+    badge: 'Hands-On Learning',
+    genres: ['Cloud', 'DevOps'],
+    stack: ['Linux / Ubuntu', 'AWS fundamentals', 'Docker', 'Kubernetes', 'CI/CD'],
+    synopsis:
+      'Ongoing hands-on exploration of cloud engineering and DevOps: Linux/Ubuntu, AWS fundamentals, Docker, Kubernetes and CI/CD.',
+    episodes: [
+      { title: 'Home on Linux', body: 'Working day to day on Linux/Ubuntu.' },
+      { title: 'Containers', body: 'Packaging and running apps with Docker.' },
+      { title: 'Orchestration', body: 'Exploring Kubernetes for running containers at scale.' },
+      { title: 'Ship It', body: 'CI/CD pipelines and AWS fundamentals for getting builds deployed.' },
+    ],
+    icon: 'cloud',
+    palette: ['#082f49', '#0369a1', '#bae6fd'],
+  },
 }
 
 export type Skill = { name: string; group: string; icon: IconName; items: string[]; palette: [string, string, string] }
@@ -153,7 +244,7 @@ export const skills: Skill[] = [
   { name: 'PostgreSQL', group: 'Databases & Tools', icon: 'database', items: ['PostgreSQL', 'Supabase', 'Git', 'GitHub'], palette: ['#172554', '#1d4ed8', '#93c5fd'] },
   { name: 'Automation', group: 'Automation & Growth', icon: 'workflow', items: ['n8n', 'Make.com', 'HubSpot CRM'], palette: ['#7c2d12', '#ea580c', '#fdba74'] },
   { name: 'Cloud & DevOps', group: 'Cloud & DevOps', icon: 'cloud', items: ['Linux / Ubuntu', 'AWS fundamentals', 'Docker', 'Kubernetes', 'CI/CD'], palette: ['#1f2937', '#475569', '#cbd5e1'] },
-  { name: 'Growth', group: 'Automation & Growth', icon: 'megaphone', items: ['Meta Ads', 'Lead generation', 'Telephony integrations'], palette: ['#7f1d1d', '#b91c1c', '#fca5a5'] },
+  { name: 'Marketing & CRM', group: 'Automation & Growth', icon: 'megaphone', items: ['Meta Ads', 'SEO', 'HubSpot CRM', 'Lead generation'], palette: ['#7f1d1d', '#b91c1c', '#fca5a5'] },
   { name: 'C / C++', group: 'Programming', icon: 'code', items: ['C', 'C++'], palette: ['#1e293b', '#334155', '#94a3b8'] },
 ]
 
@@ -182,6 +273,7 @@ export type RowSpec =
   | { kind: 'interests'; label: string }
 
 const allProjects = ['gastronomix', 'cachet', 'voice', 'engos']
+const experience = ['bmsit', 'ailab', 'cloudlab', 'growth', 'outreach', 'campaigns', 'webstudio']
 
 export const viewers: Viewer[] = [
   {
@@ -190,7 +282,7 @@ export const viewers: Viewer[] = [
       { kind: 'titles', label: 'Top Picks for Recruiter', ids: ['gastronomix', 'cachet', 'bmsit', 'growth'] },
       { kind: 'top10', label: 'Top 10 Skills in Mourya\'s Stack Today' },
       { kind: 'titles', label: 'Selected Projects', ids: allProjects },
-      { kind: 'titles', label: 'Education & Experience', ids: ['bmsit', 'growth'] },
+      { kind: 'titles', label: 'Education & Experience', ids: experience },
       { kind: 'interests', label: 'Because You Watched Applied AI' },
     ],
   },
@@ -199,18 +291,19 @@ export const viewers: Viewer[] = [
     rows: [
       { kind: 'titles', label: 'Trending in AI Infra', ids: ['cachet', 'engos', 'voice'] },
       { kind: 'top10', label: 'Top 10 in the Stack Today' },
-      { kind: 'titles', label: 'Shipped for a Real Client', ids: ['gastronomix'] },
+      { kind: 'titles', label: 'Shipped for Real Clients', ids: ['gastronomix', 'voice'] },
       { kind: 'titles', label: 'All Projects', ids: allProjects },
+      { kind: 'titles', label: 'Education & Experience', ids: experience },
       { kind: 'interests', label: 'Currently Obsessed With' },
     ],
   },
   {
     id: 'founder', label: 'Founder', color: '#16a34a', hero: 'growth',
     rows: [
-      { kind: 'titles', label: 'Builds That Save Money', ids: ['cachet', 'voice', 'gastronomix'] },
-      { kind: 'titles', label: 'Growth & Automation', ids: ['growth', 'voice'] },
+      { kind: 'titles', label: 'Builds That Save Money', ids: ['cachet', 'voice', 'gastronomix', 'engos'] },
+      { kind: 'titles', label: 'Growth & Automation', ids: ['growth', 'outreach', 'campaigns', 'webstudio', 'voice'] },
       { kind: 'top10', label: 'Top 10 Tools in the Kit' },
-      { kind: 'titles', label: 'Everything Else', ids: ['engos', 'bmsit'] },
+      { kind: 'titles', label: 'Education & Experience', ids: experience },
       { kind: 'interests', label: 'What Mourya Wants to Build Next' },
     ],
   },
@@ -218,7 +311,7 @@ export const viewers: Viewer[] = [
     id: 'curious', label: 'Just Browsing', color: '#eab308', hero: 'engos',
     rows: [
       { kind: 'titles', label: 'New Releases', ids: ['engos', 'cachet', 'voice'] },
-      { kind: 'titles', label: 'Based on a True Story', ids: ['gastronomix', 'bmsit', 'growth'] },
+      { kind: 'titles', label: 'Based on a True Story', ids: experience },
       { kind: 'top10', label: 'Top 10 Skills Today' },
       { kind: 'interests', label: 'Genres Mourya Loves' },
     ],

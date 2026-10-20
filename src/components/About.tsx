@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, MapPin, Phone } from 'lucide-react'
+import { CalendarDays, Mail, MapPin, Phone } from 'lucide-react'
 import { profile, skills } from '../data'
 
 export function GitHubIcon({ className }: { className?: string }) {
@@ -71,6 +71,14 @@ export function StillWatching() {
           The next episode is the one we build together. Mourya is looking for roles in applied AI, software and product.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <a
+            href={profile.booking}
+            target="_blank"
+            rel="noreferrer"
+            className="flex w-64 items-center justify-center gap-2 rounded bg-flix-red px-6 py-3 font-bold text-white transition hover:bg-red-700"
+          >
+            <CalendarDays className="h-5 w-5" /> Book a meeting
+          </a>
           <a
             href={`mailto:${profile.email}?subject=${encodeURIComponent('Saw your portfolio')}`}
             className="w-64 rounded bg-white px-6 py-3 font-bold text-black transition hover:bg-white/80"
