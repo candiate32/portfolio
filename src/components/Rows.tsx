@@ -21,7 +21,7 @@ function Rail({ label, id, children }: { label: string; id?: string; children: R
       <h2 className="px-4 text-lg font-bold text-neutral-100 sm:px-12 sm:text-2xl">{label}</h2>
       <div
         ref={ref}
-        className="no-scrollbar -my-8 flex snap-x gap-2 overflow-x-auto scroll-smooth px-4 py-10 sm:px-12"
+        className="no-scrollbar -my-8 flex snap-x scroll-px-4 gap-2 overflow-x-auto scroll-smooth px-4 py-10 sm:scroll-px-12 sm:px-12"
       >
         {children}
       </div>
@@ -93,40 +93,29 @@ export function skillAsTitle(s: Skill, rank: number): Title {
   }
 }
 
-/** Top 10 is a fixed grid rather than a scrolling rail: all ten skills are visible at once. */
 export function Top10Row({ label, onOpen, id }: { label: string; onOpen: (t: Title) => void; id?: string }) {
   return (
-    <motion.section
-      id={id}
-      className="scroll-mt-20 px-4 sm:px-12"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6 }}
-    >
-      <h2 className="mb-4 text-lg font-bold text-neutral-100 sm:text-2xl">{label}</h2>
-      <div className="grid grid-cols-2 gap-x-2 gap-y-6 sm:grid-cols-3 lg:grid-cols-5">
-        {skills.map((s, i) => (
-          <button
-            key={s.name}
-            type="button"
-            onClick={() => onOpen(skillAsTitle(s, i + 1))}
-            className="group relative block h-48 outline-none sm:h-60"
+    <Rail label={label} id={id}>
+      {skills.map((s, i) => (
+        <button
+          key={s.name}
+          type="button"
+          onClick={() => onOpen(skillAsTitle(s, i + 1))}
+          className="group relative flex h-56 shrink-0 snap-start items-end outline-none sm:h-64"
+        >
+          <span
+            className="font-display text-[12rem] leading-[0.78] text-flix-dark transition-[-webkit-text-stroke-color] duration-300 [-webkit-text-stroke:4px_#595959] group-hover:[-webkit-text-stroke-color:#a3a3a3] sm:text-[15rem]"
+            aria-hidden
           >
-            <span
-              className="absolute bottom-0 left-0 font-display text-[9rem] leading-[0.78] tracking-tighter text-flix-dark transition-[-webkit-text-stroke-color] duration-300 [-webkit-text-stroke:3px_#595959] group-hover:[-webkit-text-stroke-color:#a3a3a3] sm:text-[12rem]"
-              aria-hidden
-            >
-              {i + 1}
-            </span>
-            {/* Own compositing layer (transform-gpu + isolate) so the clipped artwork moves with the card instead of lagging behind it. */}
-            <div className="relative isolate ml-auto h-full w-[66%] transform-gpu overflow-hidden rounded-md shadow-xl transition-transform duration-300 ease-out will-change-transform group-hover:-translate-y-2 group-hover:scale-105 group-focus-visible:ring-2 group-focus-visible:ring-white sm:w-[62%]">
-              <Poster title={s.name} kicker={s.group} icon={s.icon} palette={s.palette} />
-            </div>
-          </button>
-        ))}
-      </div>
-    </motion.section>
+            {i + 1}
+          </span>
+          {/* Own compositing layer (transform-gpu + isolate) so the clipped artwork moves with the card instead of lagging behind it. */}
+          <div className="relative isolate -ml-6 h-full w-36 transform-gpu overflow-hidden rounded-md shadow-xl transition-transform duration-300 ease-out will-change-transform group-hover:-translate-y-2 group-hover:scale-105 group-focus-visible:ring-2 group-focus-visible:ring-white sm:-ml-8 sm:w-44">
+            <Poster title={s.name} kicker={s.group} icon={s.icon} palette={s.palette} />
+          </div>
+        </button>
+      ))}
+    </Rail>
   )
 }
 

@@ -262,7 +262,7 @@ export const viewers: Viewer[] = [
   {
     id: 'recruiter', label: 'Recruiter', color: '#E50914', hero: 'gastronomix',
     rows: [
-      { kind: 'titles', label: 'Top Picks for Recruiter', ids: ['gastronomix', 'cachet', 'bmsit', 'growth'] },
+      { kind: 'titles', label: 'Top Picks for Recruiter', ids: ['gastronomix', 'cachet', 'voice', 'engos', 'bmsit', 'ailab', 'webstudio', 'growth', 'cloudlab', 'campaigns'] },
       { kind: 'top10', label: 'Top 10 Skills in Mourya\'s Stack Today' },
       { kind: 'titles', label: 'Selected Projects', ids: allProjects },
       { kind: 'titles', label: 'Education & Experience', ids: experience },
